@@ -28,6 +28,7 @@ $ python manage.py migrate
 $ python manage.py createsuperuser
 ```
 Follow the questions in the terminal to create an admin
+
 6. Run the web server
 ```
 $ python manage.py runserver
