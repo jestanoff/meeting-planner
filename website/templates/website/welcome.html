@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Meeting Planner!</h1>
+    <p>
+        This is the demo application that I used to learn Django</a>.
+    </p>
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li><a href="{% url 'detail' meeting.id %}">{{ meeting.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <button onClick="javascirpt:location.href='{% url "new" %}'">New meeting</button>
+    <h2>Rooms</h2>
+    <p><a href="{% url 'rooms'%}">List rooms</a></p>
+    <p>Note: To create rooms use the <a href="/admin">admin interface</a></p>
+{% endblock %}
